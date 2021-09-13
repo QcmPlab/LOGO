@@ -1,0 +1,11 @@
+# No raster pictures here
+
+*.png
+*.jpg
+*.jpeg
+
+# No filesystem junk here
+
+.DS_Store
+desktop.ini
+thumbs.db
