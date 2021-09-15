@@ -15,7 +15,7 @@
    version="1.1"
    id="svg8"
    inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
-   sodipodi:docname="light-logo.svg"
+   sodipodi:docname="light-logo-code.svg"
    inkscape:export-filename="C:\Users\gbell\Dropbox\SISSA\KaneMeleProject\QcmPLab-Logo\bitmap.png"
    inkscape:export-xdpi="1200"
    inkscape:export-ydpi="1200">
@@ -1163,7 +1163,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="2.67"
-     inkscape:cx="89.839748"
+     inkscape:cx="162.68619"
      inkscape:cy="136.01449"
      inkscape:document-units="mm"
      inkscape:current-layer="layer6"
@@ -1198,7 +1198,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -1213,6 +1213,213 @@
        height="79.837616"
        x="0.39522082"
        y="0.42500949" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:1.51450419px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.11358778"
+       x="2.333529"
+       y="3.20488"
+       id="text1150"
+       transform="scale(0.98883293,1.0112932)"><tspan
+         sodipodi:role="line"
+         id="tspan1148"
+         x="2.333529"
+         y="3.20488"
+         style="fill:#666666;stroke-width:0.11358778">subroutine es_insert_state_c(space,e,vec,sector,twin)</tspan><tspan
+         sodipodi:role="line"
+         x="2.333529"
+         y="5.0980101"
+         style="fill:#666666;stroke-width:0.11358778"
+         id="tspan1152">    type(sparse_espace),intent(inout)  :: space</tspan><tspan
+         sodipodi:role="line"
+         x="2.333529"
+         y="6.9911404"
+         style="fill:#666666;stroke-width:0.11358778"
+         id="tspan1154">    real(8),intent(in)                 :: e</tspan><tspan
+         sodipodi:role="line"
+         x="2.333529"
+         y="8.8842707"
+         style="fill:#666666;stroke-width:0.11358778"
+         id="tspan1156">    complex(8),dimension(:),intent(in) :: vec</tspan><tspan
+         sodipodi:role="line"
+         x="2.333529"
+         y="10.777401"
+         style="fill:#666666;stroke-width:0.11358778"
+         id="tspan1158">    integer,intent(in)                 :: sector</tspan><tspan
+         sodipodi:role="line"
+         x="2.333529"
+         y="12.670531"
+         style="fill:#666666;stroke-width:0.11358778"
+         id="tspan1160">    logical                            :: twin</tspan><tspan
+         sodipodi:role="line"
+         x="2.333529"
+         y="14.563662"
+         style="fill:#666666;stroke-width:0.11358778"
+         id="tspan1162">    type(sparse_estate),pointer        :: p,c</tspan><tspan
+         sodipodi:role="line"
+         x="2.333529"
+         y="16.456791"
+         style="fill:#666666;stroke-width:0.11358778"
+         id="tspan1164">    p =&gt; space%root</tspan><tspan
+         sodipodi:role="line"
+         x="2.333529"
+         y="18.349922"
+         style="fill:#666666;stroke-width:0.11358778"
+         id="tspan1166">    c =&gt; p%next</tspan><tspan
+         sodipodi:role="line"
+         x="2.333529"
+         y="20.243052"
+         style="fill:#666666;stroke-width:0.11358778"
+         id="tspan1168">    do                            !traverse the list until e &lt; value (ordered list)</tspan><tspan
+         sodipodi:role="line"
+         x="2.333529"
+         y="22.136183"
+         style="fill:#666666;stroke-width:0.11358778"
+         id="tspan1170">       if(.not.associated(c))exit</tspan><tspan
+         sodipodi:role="line"
+         x="2.333529"
+         y="24.029312"
+         style="fill:#666666;stroke-width:0.11358778"
+         id="tspan1172">       if(e &lt;= c%e)exit</tspan><tspan
+         sodipodi:role="line"
+         x="2.333529"
+         y="25.922443"
+         style="fill:#666666;stroke-width:0.11358778"
+         id="tspan1174">       p =&gt; c</tspan><tspan
+         sodipodi:role="line"
+         x="2.333529"
+         y="27.815573"
+         style="fill:#666666;stroke-width:0.11358778"
+         id="tspan1176">       c =&gt; c%next</tspan><tspan
+         sodipodi:role="line"
+         x="2.333529"
+         y="29.708704"
+         style="fill:#666666;stroke-width:0.11358778"
+         id="tspan1178">    end do</tspan><tspan
+         sodipodi:role="line"
+         x="2.333529"
+         y="31.601833"
+         style="fill:#666666;stroke-width:0.11358778"
+         id="tspan1180">    !</tspan><tspan
+         sodipodi:role="line"
+         x="2.333529"
+         y="33.494965"
+         style="fill:#666666;stroke-width:0.11358778"
+         id="tspan1182">    allocate(p%next)                !Create a new element in the list</tspan><tspan
+         sodipodi:role="line"
+         x="2.333529"
+         y="35.388096"
+         style="fill:#666666;stroke-width:0.11358778"
+         id="tspan1184">    p%next%e = e</tspan><tspan
+         sodipodi:role="line"
+         x="2.333529"
+         y="37.281223"
+         style="fill:#666666;stroke-width:0.11358778"
+         id="tspan1186">    if(e &gt; space%emax)space%emax=e !update the max energy (corresponds to the top entry)</tspan><tspan
+         sodipodi:role="line"
+         x="2.333529"
+         y="39.174355"
+         style="fill:#666666;stroke-width:0.11358778"
+         id="tspan1188">    if(e &lt; space%emin)space%emin=e !update the min energy (corresponds to the first entry)</tspan><tspan
+         sodipodi:role="line"
+         x="2.333529"
+         y="41.067486"
+         style="fill:#666666;stroke-width:0.11358778"
+         id="tspan1190">    allocate(p%next%cvec(size(vec)))</tspan><tspan
+         sodipodi:role="line"
+         x="2.333529"
+         y="42.960613"
+         style="fill:#666666;stroke-width:0.11358778"
+         id="tspan1192">    p%next%cvec = vec</tspan><tspan
+         sodipodi:role="line"
+         x="2.333529"
+         y="44.853745"
+         style="fill:#666666;stroke-width:0.11358778"
+         id="tspan1194">    p%next%itwin=.false.</tspan><tspan
+         sodipodi:role="line"
+         x="2.333529"
+         y="46.746876"
+         style="fill:#666666;stroke-width:0.11358778"
+         id="tspan1196">    p%next%sector=sector</tspan><tspan
+         sodipodi:role="line"
+         x="2.333529"
+         y="48.640007"
+         style="fill:#666666;stroke-width:0.11358778"
+         id="tspan1198">    space%size = space%size+1</tspan><tspan
+         sodipodi:role="line"
+         x="2.333529"
+         y="50.533134"
+         style="fill:#666666;stroke-width:0.11358778"
+         id="tspan1200">    if(twin)then !Create a twin element in the list with same energy, no vector and twin flag T</tspan><tspan
+         sodipodi:role="line"
+         x="2.333529"
+         y="52.426266"
+         style="fill:#666666;stroke-width:0.11358778"
+         id="tspan1202">       allocate(p%next%next)</tspan><tspan
+         sodipodi:role="line"
+         x="2.333529"
+         y="54.319397"
+         style="fill:#666666;stroke-width:0.11358778"
+         id="tspan1204">       p%next%next%e = e    </tspan><tspan
+         sodipodi:role="line"
+         x="2.333529"
+         y="56.212528"
+         style="fill:#666666;stroke-width:0.11358778"
+         id="tspan1206">       p%next%next%itwin=.true.</tspan><tspan
+         sodipodi:role="line"
+         x="2.333529"
+         y="58.105656"
+         style="fill:#666666;stroke-width:0.11358778"
+         id="tspan1208">       p%next%next%sector=get_twin_sector(sector)</tspan><tspan
+         sodipodi:role="line"
+         x="2.333529"
+         y="59.998787"
+         style="fill:#666666;stroke-width:0.11358778"
+         id="tspan1210">       p%next%next%twin =&gt; p%next      ! wiggled arrow of twin_wout_vector points to twin_w_vector</tspan><tspan
+         sodipodi:role="line"
+         x="2.333529"
+         y="61.891918"
+         style="fill:#666666;stroke-width:0.11358778"
+         id="tspan1212">       p%next%twin      =&gt; p%next%next ! wiggled arrow of twin_w_vector points to twin_wout_vector</tspan><tspan
+         sodipodi:role="line"
+         x="2.333529"
+         y="63.785049"
+         style="fill:#666666;stroke-width:0.11358778"
+         id="tspan1214">       space%size = space%size+1</tspan><tspan
+         sodipodi:role="line"
+         x="2.333529"
+         y="65.678177"
+         style="fill:#666666;stroke-width:0.11358778"
+         id="tspan1216">    endif</tspan><tspan
+         sodipodi:role="line"
+         x="2.333529"
+         y="67.571312"
+         style="fill:#666666;stroke-width:0.11358778"
+         id="tspan1218">    if(.not.associated(c))then !end of the list special case (current=&gt;current%next)</tspan><tspan
+         sodipodi:role="line"
+         x="2.333529"
+         y="69.464439"
+         style="fill:#666666;stroke-width:0.11358778"
+         id="tspan1220">       if(.not.twin)then</tspan><tspan
+         sodipodi:role="line"
+         x="2.333529"
+         y="71.357567"
+         style="fill:#666666;stroke-width:0.11358778"
+         id="tspan1222">          p%next%next  =&gt; null()</tspan><tspan
+         sodipodi:role="line"
+         x="2.333529"
+         y="73.250702"
+         style="fill:#666666;stroke-width:0.11358778"
+         id="tspan1224">       else</tspan><tspan
+         sodipodi:role="line"
+         x="2.333529"
+         y="75.143829"
+         style="fill:#666666;stroke-width:0.11358778"
+         id="tspan1226">          p%next%next%next  =&gt; null()</tspan><tspan
+         sodipodi:role="line"
+         x="2.333529"
+         y="77.036957"
+         style="fill:#666666;stroke-width:0.11358778"
+         id="tspan1248">       endif</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
